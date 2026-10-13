@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI Regulatory Watcher — official weekly snapshot">
+  <title>AI Regulatory Watcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="auth-loading" class="auth-screen">
+    <div class="auth-card">
+      <div class="eyebrow">AI REGULATORY WATCHER</div>
+      <h2>Checking access…</h2>
+      <p>Please wait while secure access is initialized.</p>
+    </div>
+  </div>
+
+  <div id="signed-out-view" class="auth-screen hidden">
+    <div class="auth-wrapper">
+      <div class="auth-intro">
+        <div class="eyebrow">REGULATORY INTELLIGENCE · WEEKLY WATCHER</div>
+        <h1>AI Regulatory Watcher</h1>
+        <p>Authoritative-source monitoring with explicit source health, provenance and AI-assisted interpretation.</p>
+        <p class="auth-note"><strong>Informational only.</strong> This non-commercial service does not provide legal or professional advice.</p>
+      </div>
+      <div id="clerk-sign-in"></div>
+    </div>
+  </div>
+
+  <div id="signed-in-view" class="hidden">
+    <div class="auth-toolbar">
+      <span>Protected watcher access</span>
+      <div id="clerk-user-button"></div>
+    </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">REGULATORY INTELLIGENCE · WEEKLY WATCHER</div>
+        <h1>AI Regulatory Watcher</h1>
+        <p class="subtitle">Authoritative-source monitoring with explicit source health, provenance and AI-assisted interpretation.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="notice"><strong>Latest official weekly snapshot.</strong> <span id="snapshot-meta">Loading saved weekly snapshot…</span> Refreshing this page only reloads the saved snapshot; it does not start a new scan.</section>
+      <section class="notice"><strong>Informational only.</strong> This service is non-commercial and does not provide legal or professional advice. AI-assisted interpretation is shown separately from source facts.</section>
+      <section id="run-summary" class="summary-grid"></section>
+
+      <section class="section">
+        <div class="section-header">
+          <div><div class="eyebrow">COVERAGE</div><h2>Coverage health</h2></div>
+          <div class="legend">
+            <span><i class="dot complete"></i> Complete</span>
+            <span><i class="dot partial"></i> Partial</span>
+            <span><i class="dot failed"></i> Needs review</span>
+          </div>
+        </div>
+        <div id="coverage-grid" class="coverage-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-header responsive">
+          <div><div class="eyebrow">LATEST KNOWN ITEMS</div><h2>Regulatory developments</h2></div>
+          <div class="filters">
+            <input id="search" type="search" placeholder="Search title, source or summary…" aria-label="Search items">
+            <select id="coverage-filter" aria-label="Filter by coverage area"><option value="">All coverage areas</option></select>
+          </div>
+        </div>
+        <div id="items"></div>
+        <div id="empty-state" class="empty-state hidden"><strong>No matching items.</strong><span>Try clearing the search or coverage filter.</span></div>
+      </section>
+    </main>
+
+    <footer><span>AI Regulatory Watcher · v1.9</span><span id="run-id"></span></footer>
+  </div>
+
+  </div>
+
+  <script
+    defer
+    crossorigin="anonymous"
+    src="https://careful-bobcat-6240.clerk.accounts.dev/npm/@clerk/ui@1/dist/ui.browser.js"
+    type="text/javascript"
+  ></script>
+  <script
+    defer
+    crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_Y2FyZWZ1bC1ib2JjYXQtNjI0MC5jbGVyay5hY2NvdW50cy5kZXYk"
+    src="https://careful-bobcat-6240.clerk.accounts.dev/npm/@clerk/clerk-js@6/dist/clerk.browser.js"
+    type="text/javascript"
+  ></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+
+</html>
